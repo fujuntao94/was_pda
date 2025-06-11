@@ -1,6 +1,8 @@
 package com.sobuy.pda.component.splash
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -29,6 +31,12 @@ class SplashActivity : BaseLogicActivity() {
     }
 
     private fun showTermsServiceAgreementDialog() {
-        TermServiceDialogFragment.show(supportFragmentManager);
+        TermServiceDialogFragment.show(
+            supportFragmentManager
+        ) { Log.d(TAG, "primary Click") };
+    }
+
+    companion object {
+        const val TAG = "SplashActivity"
     }
 }
