@@ -1,17 +1,24 @@
 package com.sobuy.pda.activity
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import com.sobuy.pda.utils.ReflectUtil
 
-open class BaseViewModelActivity<VB : ViewBinding> : BaseLogicActivity() {
-    lateinit var binding: VB
+open class BaseViewModelActivity<VB : ViewBinding>(
+    private val inflate: (LayoutInflater) -> VB
+) : BaseLogicActivity() {
+
+    private var _binding: VB? = null
+    protected val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ReflectUtil.newViewBinding(layoutInflater, javaClass)
-
+        _binding = inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

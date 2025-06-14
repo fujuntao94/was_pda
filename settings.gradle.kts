@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "pda"
 include(":app")
+include(":super-k")

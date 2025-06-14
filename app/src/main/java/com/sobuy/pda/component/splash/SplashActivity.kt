@@ -1,16 +1,13 @@
 package com.sobuy.pda.component.splash
 
 import android.Manifest
-import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import com.permissionx.guolindev.PermissionX
-import com.sobuy.pda.activity.BaseLogicActivity
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
 import com.sobuy.pda.utils.DefaultPreferenceUtil
 
-class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
+class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
     override fun initViews() {
         super.initViews()
     }
@@ -26,7 +23,7 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
                     prepareNext()
                 }, 1000)
             } else {
-                finish()
+//                finish()
             }
         }
     }

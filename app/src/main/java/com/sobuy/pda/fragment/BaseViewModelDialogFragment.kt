@@ -4,25 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.sobuy.pda.utils.ReflectUtil
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseViewModelDialogFragment<VB: ViewBinding> : BaseCommonDialogFragment() {
+abstract class BaseViewModelDialogFragment<VB: ViewBinding>(
+    private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> VB
+) : BaseCommonDialogFragment() {
     private var _binding: VB? = null
     protected val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        _binding = ReflectUtil.newViewBinding(layoutInflater, this.javaClass)
-    }
 
     override fun getLayoutView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return _binding!!.root
+        _binding = inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onDestroy() {

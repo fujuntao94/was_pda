@@ -9,7 +9,8 @@ import com.sobuy.pda.fragment.BaseViewModelDialogFragment
 import com.sobuy.pda.process.SuperProcessUtil
 import com.sobuy.pda.utils.ScreenUtil
 
-class TermServiceDialogFragment : BaseViewModelDialogFragment<FragmentDialogTermServiceBinding>() {
+class TermServiceDialogFragment :
+    BaseViewModelDialogFragment<FragmentDialogTermServiceBinding>(FragmentDialogTermServiceBinding::inflate) {
 
     private lateinit var onAgreementClickListener: OnClickListener
 
