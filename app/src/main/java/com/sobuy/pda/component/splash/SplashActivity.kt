@@ -1,39 +1,60 @@
 package com.sobuy.pda.component.splash
 
+import android.Manifest
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.permissionx.guolindev.PermissionX
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseLogicActivity
+import com.sobuy.pda.utils.DefaultPreferenceUtil
 
 class SplashActivity : BaseLogicActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
     }
 
     override fun initViews() {
         super.initViews()
     }
 
+    private fun requestPermission() {
+        PermissionX.init(this).permissions(
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.BLUETOOTH_SCAN
+        ).request { allGranted, grantedList, deniedList ->
+            if (allGranted) {
+                prepareNext()
+            } else {
+                finish()
+            }
+        }
+    }
+
+    private fun prepareNext() {
+        Log.d(TAG, "prepareNext: ")
+    }
+
     override fun initDatum() {
         super.initDatum()
-        showTermsServiceAgreementDialog()
+        if (DefaultPreferenceUtil.getInstance(this).isAcceptTermsServiceAgreement) {
+            requestPermission()
+        } else {
+            showTermsServiceAgreementDialog()
+        }
     }
 
     private fun showTermsServiceAgreementDialog() {
         TermServiceDialogFragment.show(
             supportFragmentManager
-        ) { Log.d(TAG, "primary Click") };
+        ) {
+            Log.d(TAG, "primary Click")
+            requestPermission()
+            DefaultPreferenceUtil.getInstance(this).setAcceptTermsServiceAgreement();
+        };
     }
 
     companion object {
