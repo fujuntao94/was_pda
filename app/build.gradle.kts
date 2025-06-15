@@ -14,6 +14,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        flavorDimensions("environment")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -37,6 +39,30 @@ android {
     viewBinding {
         enable = true
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    productFlavors {
+        create("dev") {
+            // 开发环境配置
+//            dimension = "environment"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "MyApp Dev")
+            buildConfigField("String", "API_URL", "\"https://api.example1.com\"")
+        }
+
+        create("prod") {
+            // 生产环境配置
+//            dimension = "environment"
+            applicationIdSuffix = ""
+            versionNameSuffix = ""
+            resValue("string", "app_name", "MyApp")
+            buildConfigField("String", "API_URL", "\"https://api.example2.com\"")
+        }
+    }
 }
 
 dependencies {
@@ -49,6 +75,11 @@ dependencies {
     implementation(libs.permissionx)
     implementation(project(":super-k"))
     implementation(libs.mmkv)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

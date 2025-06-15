@@ -7,6 +7,7 @@ import com.tencent.mmkv.MMKV
 class AppContext: Application() {
     override fun onCreate() {
         super.onCreate()
+        instance = this
         initMMKV()
     }
 
@@ -17,5 +18,7 @@ class AppContext: Application() {
 
     companion object {
         const val TAG = "AppContext"
+
+        lateinit var instance: AppContext
     }
 }

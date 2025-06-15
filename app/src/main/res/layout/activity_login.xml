@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".component.login.LoginActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/logo"></ImageView>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="WCS Managment Syetem" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/jumpToEnd"
-            style="@style/SuperButton.Primary"
-            android:layout_width="wrap_content"
-            android:minWidth="@dimen/d130"
-            android:text="登陆或注册"
-            app:cornerRadius="@dimen/d10" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你1好" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="horizontal">-->
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/jumpToStart"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:backgroundTint="?attr/colorLightWhite"
-            android:minWidth="@dimen/d130"
-            android:text="立即体验"
-            app:cornerRadius="@dimen/d10"
-            android:textColor="@color/black"
-            app:strokeColor="?attr/colorPrimary"
-            app:strokeWidth="1dp" />
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1" />-->
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/jumpToEnd"-->
+    <!--            style="@style/SuperButton.Primary"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:minWidth="@dimen/d130"-->
+    <!--            android:text="登陆或注册"-->
+    <!--            app:cornerRadius="@dimen/d10" />-->
 
-    </LinearLayout>
-</RelativeLayout>
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1" />-->
+
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/jumpToStart"-->
+    <!--            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="55dp"-->
+    <!--            android:backgroundTint="?attr/colorLightWhite"-->
+    <!--            android:minWidth="@dimen/d130"-->
+    <!--            android:text="立即体验"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            app:cornerRadius="@dimen/d10"-->
+    <!--            app:strokeColor="?attr/colorPrimary"-->
+    <!--            app:strokeWidth="1dp" />-->
+
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1" />-->
+
+    <!--    </LinearLayout>-->
+</LinearLayout>
