@@ -20,7 +20,7 @@ abstract class BaseDialogFragment : DialogFragment() {
         return view
     }
 
-    open abstract fun getLayoutView(
+    abstract fun getLayoutView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
