@@ -7,8 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".component.login.LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/jumpToEnd"
+            style="@style/SuperButton.Primary"
+            android:layout_width="wrap_content"
+            android:minWidth="@dimen/d130"
+            android:text="登陆或注册"
+            app:cornerRadius="@dimen/d10" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/jumpToStart"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:backgroundTint="?attr/colorLightWhite"
+            android:minWidth="@dimen/d130"
+            android:text="立即体验"
+            app:cornerRadius="@dimen/d10"
+            android:textColor="@color/black"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 </RelativeLayout>

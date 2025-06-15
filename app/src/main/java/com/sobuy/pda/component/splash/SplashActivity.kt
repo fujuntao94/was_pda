@@ -1,13 +1,14 @@
 package com.sobuy.pda.component.splash
 
 import android.Manifest
-import android.content.Intent
 import android.util.Log
 import com.permissionx.guolindev.PermissionX
+import com.sobuy.pda.MainActivity
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.component.login.LoginActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
 import com.sobuy.pda.utils.DefaultPreferenceUtil
+import com.sobuy.pda.utils.PreferenceUtil
 
 class SplashActivity :
     BaseViewModelActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
@@ -33,7 +34,12 @@ class SplashActivity :
 
     private fun prepareNext() {
         Log.d(TAG, "prepareNext: ")
-        startActivityAfterFinishThis(LoginActivity::class.java)
+
+        if (PreferenceUtil.isShowGuide()) {
+            startActivityAfterFinishThis(LoginActivity::class.java)
+            return
+        }
+        startActivityAfterFinishThis(MainActivity::class.java)
     }
 
     override fun initDatum() {
