@@ -47,16 +47,16 @@ android {
     productFlavors {
         create("dev") {
             // 开发环境配置
-//            dimension = "environment"
+            dimension = "environment"
             applicationIdSuffix = ".dev"
             versionNameSuffix = "-dev"
             resValue("string", "app_name", "MyApp Dev")
-            buildConfigField("String", "API_URL", "\"https://api.example1.com\"")
+            buildConfigField("String", "API_URL", "\"http://47.100.204.166:18086/api/\"")
         }
 
         create("prod") {
             // 生产环境配置
-//            dimension = "environment"
+            dimension = "environment"
             applicationIdSuffix = ""
             versionNameSuffix = ""
             resValue("string", "app_name", "MyApp")
@@ -80,6 +80,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.converter.gson)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

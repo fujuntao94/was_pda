@@ -1,14 +1,13 @@
 package com.sobuy.pda.api
 
+import com.sobuy.pda.content.ContentWrapper
 import retrofit2.http.Query
 import retrofit2.http.GET
 
 interface DefaultNetworkService {
 
-    @GET("/api/logo")
-    suspend fun contents(
-        @Query(value = "page") last: String?
-
+    @GET("/captchaImage")
+    suspend fun captchaImageApi(
     ): ContentWrapper
 
     companion object {
