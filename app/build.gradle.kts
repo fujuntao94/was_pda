@@ -82,6 +82,8 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.rxandroidble)
+//    implementation(libs.rxandroidble2.rxandroidble)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

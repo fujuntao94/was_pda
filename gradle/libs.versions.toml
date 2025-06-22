@@ -16,6 +16,8 @@ mmkv = "2.2.2"
 okhttp = "4.12.0"
 permissionx = "1.7.1"
 retrofit = "2.9.0"
+rxandroidble = "1.19.1"
+rxandroidbleVersion = "2.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +37,8 @@ mmkv = { module = "com.tencent:mmkv", version.ref = "mmkv" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+rxandroidble = { module = "com.polidea.rxandroidble3:rxandroidble", version.ref = "rxandroidble" }
+rxandroidble2-rxandroidble = { module = "com.polidea.rxandroidble2:rxandroidble", version.ref = "rxandroidbleVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
