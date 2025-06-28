@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">pda</string>
-    <string name="discovery" translatable="false">discovery</string>
-    <string name="video" translatable="false">video</string>
-    <string name="category" translatable="false">category</string>
-    <string name="me">我的</string>
+    <string name="Inbound">入库</string>
+    <string name="Outbound">出库</string>
+    <string name="Inventory">库内管理</string>
+    <string name="My">我的</string>
 </resources>
