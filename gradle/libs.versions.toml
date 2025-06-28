@@ -21,6 +21,7 @@ rxandroidbleVersion = "2.3.0"
 tablayout = "3.7.1"
 viewpager2delegate = "3.5.3"
 viewpager2delegateVersion = "3.7.1"
+cardview = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,6 +47,7 @@ tablayout = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref =
 tablayout-v371 = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref = "tablayout" }
 viewpager2delegate = { module = "com.github.angcyo.DslTablayout:ViewPager2Delegate", version.ref = "viewpager2delegate" }
 viewpager2delegate-v371 = { module = "com.github.angcyo.DslTablayout:ViewPager2Delegate", version.ref = "viewpager2delegateVersion" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

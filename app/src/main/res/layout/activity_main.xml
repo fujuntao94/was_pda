@@ -17,8 +17,6 @@
         android:background="#F0F0F0"
         tools:ignore="MissingClass,MissingConstraints" />
 
-    <!--    <include layout="@layout/divider_small" />-->
-
     <com.angcyo.tablayout.DslTabLayout
         android:id="@+id/indicator"
         android:layout_width="match_parent"

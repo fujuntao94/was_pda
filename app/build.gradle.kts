@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.rxandroidble)
     implementation(libs.tablayout.v371)
     implementation(libs.viewpager2delegate.v371)
+    implementation(libs.androidx.cardview)
 
 
     testImplementation(libs.junit)

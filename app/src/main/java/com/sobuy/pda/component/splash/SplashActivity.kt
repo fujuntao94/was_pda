@@ -2,25 +2,13 @@ package com.sobuy.pda.component.splash
 
 import android.Manifest
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.le.ScanCallback
-import android.bluetooth.le.ScanFilter
-import android.bluetooth.le.ScanResult
-import android.bluetooth.le.ScanSettings
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
-import androidx.core.app.ActivityCompat
 import com.permissionx.guolindev.PermissionX
 import com.sobuy.pda.component.main.MainActivity
 import com.sobuy.pda.activity.BaseViewModelActivity
-import com.sobuy.pda.component.login.LoginActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
 import com.sobuy.pda.utils.DefaultPreferenceUtil
-import com.sobuy.pda.utils.PreferenceUtil
-import android.bluetooth.*
-
 
 class SplashActivity :
     BaseViewModelActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
@@ -95,7 +83,7 @@ class SplashActivity :
             Log.d(TAG, "primary Click")
             requestPermission()
             DefaultPreferenceUtil.getInstance(this).setAcceptTermsServiceAgreement();
-        };
+        }
     }
 
     companion object {
