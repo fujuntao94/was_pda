@@ -18,6 +18,9 @@ permissionx = "1.7.1"
 retrofit = "2.9.0"
 rxandroidble = "1.19.1"
 rxandroidbleVersion = "2.3.0"
+tablayout = "3.7.1"
+viewpager2delegate = "3.5.3"
+viewpager2delegateVersion = "3.7.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +42,10 @@ permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 rxandroidble = { module = "com.polidea.rxandroidble3:rxandroidble", version.ref = "rxandroidble" }
 rxandroidble2-rxandroidble = { module = "com.polidea.rxandroidble2:rxandroidble", version.ref = "rxandroidbleVersion" }
+tablayout = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref = "viewpager2delegate" }
+tablayout-v371 = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref = "tablayout" }
+viewpager2delegate = { module = "com.github.angcyo.DslTablayout:ViewPager2Delegate", version.ref = "viewpager2delegate" }
+viewpager2delegate-v371 = { module = "com.github.angcyo.DslTablayout:ViewPager2Delegate", version.ref = "viewpager2delegateVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

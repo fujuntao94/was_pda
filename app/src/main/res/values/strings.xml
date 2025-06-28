@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">pda</string>
+    <string name="discovery" translatable="false">discovery</string>
+    <string name="video" translatable="false">video</string>
+    <string name="category" translatable="false">category</string>
+    <string name="me">我的</string>
 </resources>

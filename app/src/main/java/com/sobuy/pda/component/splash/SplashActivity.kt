@@ -13,7 +13,7 @@ import android.os.Build
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.permissionx.guolindev.PermissionX
-import com.sobuy.pda.MainActivity
+import com.sobuy.pda.component.main.MainActivity
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.component.login.LoginActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
@@ -72,10 +72,10 @@ class SplashActivity :
     private fun prepareNext() {
         Log.d(TAG, "prepareNext: ")
 
-        if (PreferenceUtil.isShowGuide()) {
-            startActivityAfterFinishThis(LoginActivity::class.java)
-            return
-        }
+//        if (PreferenceUtil.isShowGuide()) {
+//            startActivityAfterFinishThis(LoginActivity::class.java)
+//            return
+//        }
         startActivityAfterFinishThis(MainActivity::class.java)
     }
 

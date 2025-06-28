@@ -7,6 +7,8 @@
         <item name="colorPrimary">@color/primary</item>
 
         <item name="colorLightWhite">@color/white</item>
+        <item name="colorDivider">@color/black183</item>
+
     </style>
 
     <!-- region 按钮 -->
@@ -21,4 +23,5 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <!-- endregion -->
+
 </resources>

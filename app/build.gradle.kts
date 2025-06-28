@@ -83,6 +83,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.rxandroidble)
+    implementation(libs.tablayout.v371)
+    implementation(libs.viewpager2delegate.v371)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

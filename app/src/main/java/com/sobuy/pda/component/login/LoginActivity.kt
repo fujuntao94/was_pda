@@ -3,6 +3,7 @@ package com.sobuy.pda.component.login
 import android.util.Log
 import androidx.activity.viewModels
 import com.sobuy.pda.activity.BaseViewModelActivity
+import com.sobuy.pda.api.DefaultNetworkService
 import com.sobuy.pda.config.Config
 import com.sobuy.pda.databinding.ActivityLoginBinding
 import com.sobuy.pda.utils.PreferenceUtil
@@ -24,9 +25,10 @@ class LoginActivity : BaseViewModelActivity<ActivityLoginBinding>(ActivityLoginB
 
     override fun initListeners() {
         super.initListeners()
-
+        Log.d(TAG, "initListeners: ${viewModel.scannedDevices}")
         binding.jumpToEnd.setOnClickListener {
-            viewModel.startScan()
+//            viewModel.startScan()
+
         }
     }
 
