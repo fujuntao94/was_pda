@@ -2,4 +2,9 @@
 <resources>
     <attr name="colorLightWhite" format="color"/>
     <attr name="colorDivider" format="color"/>
+    <declare-styleable name="CustomLayout">
+        <attr name="customText" format="string" />
+        <attr name="customColor" format="color" />
+        <attr name="customSize" format="dimension" />
+    </declare-styleable>
 </resources>

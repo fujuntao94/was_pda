@@ -7,6 +7,22 @@
     android:orientation="vertical"
     tools:context=".component.inbound.InboundFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:title="@string/Inbound"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="25dp" />
