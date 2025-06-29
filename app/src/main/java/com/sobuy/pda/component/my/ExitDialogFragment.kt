@@ -40,7 +40,7 @@ class ExitDialogFragment :
         super.onResume()
         val params: ViewGroup.LayoutParams = dialog!!.window!!.attributes;
         Log.d(TAG, "onResume: $params")
-        params.width = ((ScreenUtil.getScreenWidth(requireContext()) * 0.7).toInt())
+        params.width = ((ScreenUtil.getScreenWidth(requireContext()) * 0.65).toInt())
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams;
     }

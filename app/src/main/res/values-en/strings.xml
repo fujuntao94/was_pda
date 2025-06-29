@@ -5,4 +5,5 @@
     <string name="Outbound">Outbound</string>
     <string name="Inventory">Inventory</string>
     <string name="My">My</string>
+    <string name="unloading_list_btn_synccon">Sync Con</string>
 </resources>
