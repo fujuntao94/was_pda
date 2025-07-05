@@ -9,9 +9,13 @@
     android:orientation="vertical"
     tools:context=".component.unloading.list.UnloadingListActivity">
 
-    <include
-        layout="@layout/custom_layout"
-        app:customText="Hello from parent!" />
+<!--        <include-->
+<!--            layout="@layout/layout_include"-->
+<!--            app:customText="Hello from parent!" />-->
+    <com.sobuy.k.util.CustomIncludeView
+        app:contentText="标题啊"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"

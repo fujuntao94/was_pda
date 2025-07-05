@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="CustomIncludeView">
+        <!-- 示例：传递文本内容、文本颜色、背景色 -->
+        <attr name="contentText" format="string" />
+        <attr name="contentTextColor" format="color" />
+        <attr name="contentBgColor" format="color" />
+    </declare-styleable>
+</resources>
