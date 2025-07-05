@@ -1,6 +1,5 @@
 package com.sobuy.pda.component.unloading.list
 
-import android.util.Log
 import androidx.core.content.ContextCompat
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseViewModelActivity
@@ -9,12 +8,14 @@ import com.sobuy.pda.databinding.ActivityUnloadingListBinding
 class UnloadingListActivity :
     BaseViewModelActivity<ActivityUnloadingListBinding>(ActivityUnloadingListBinding::inflate) {
     private var activeTab = "first"
+
     override fun initViews() {
         super.initViews()
     }
 
     override fun initDatum() {
         super.initDatum()
+//        binding.appBarLayout.toolbarTitle = "主页1"
     }
 
     override fun initListeners() {
@@ -47,7 +48,12 @@ class UnloadingListActivity :
                         R.color.white
                     )
                 )
-                binding.onlyInLoadingText.setTextColor(ContextCompat.getColor(this, R.color.primary))
+                binding.onlyInLoadingText.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.primary
+                    )
+                )
                 binding.allDesksTab.setBackgroundColor(
                     ContextCompat.getColor(
                         this,

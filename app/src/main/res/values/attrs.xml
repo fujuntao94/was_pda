@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="CustomLayout">
+        <attr name="toolbarTitle" format="string" />
+    </declare-styleable>
+
     <attr name="colorLightWhite" format="color"/>
     <attr name="colorDivider" format="color"/>
-    <declare-styleable name="CustomLayout">
-        <attr name="customText" format="string" />
-        <attr name="customColor" format="color" />
-        <attr name="customSize" format="dimension" />
-    </declare-styleable>
 </resources>
