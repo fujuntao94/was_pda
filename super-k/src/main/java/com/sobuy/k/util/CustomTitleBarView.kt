@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import com.sobuy.k.R
 
 // 自定义 View 继承自布局的根容器（LinearLayout）
-class CustomIncludeView @JvmOverloads constructor(
+class CustomTitleBarView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,  // 用于接收布局中传递的 app: 属性
     defStyleAttr: Int = 0

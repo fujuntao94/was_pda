@@ -44,6 +44,12 @@ android {
         buildConfig = true
     }
 
+    dataBinding {
+        enable = true
+        //noinspection DataBindingWithoutKapt
+        isEnabled = true
+    }
+
     productFlavors {
         create("dev") {
             // 开发环境配置

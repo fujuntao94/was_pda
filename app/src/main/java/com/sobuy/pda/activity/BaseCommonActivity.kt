@@ -13,4 +13,5 @@ open class BaseCommonActivity: BaseActivity() {
         startActivity(clazz)
         finish()
     }
+
 }
