@@ -1,6 +1,8 @@
 package com.sobuy.pda.component.unloading.list
 
 import androidx.core.content.ContextCompat
+import com.gyf.immersionbar.ImmersionBar
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivityUnloadingListBinding
@@ -8,15 +10,6 @@ import com.sobuy.pda.databinding.ActivityUnloadingListBinding
 class UnloadingListActivity :
     BaseViewModelActivity<ActivityUnloadingListBinding>(ActivityUnloadingListBinding::inflate) {
     private var activeTab = "first"
-
-    override fun initViews() {
-        super.initViews()
-    }
-
-    override fun initDatum() {
-        super.initDatum()
-//        binding.appBarLayout.toolbarTitle = "主页1"
-    }
 
     override fun initListeners() {
         super.initListeners()
@@ -64,6 +57,12 @@ class UnloadingListActivity :
                 activeTab = "first"
             }
         }
+    }
+
+
+    override fun initViews() {
+        super.initViews()
+
     }
 
     companion object {
