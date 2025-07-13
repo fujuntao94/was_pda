@@ -46,8 +46,6 @@ android {
 
     dataBinding {
         enable = true
-        //noinspection DataBindingWithoutKapt
-        isEnabled = true
     }
 
     productFlavors {
