@@ -1,12 +1,15 @@
 package com.sobuy.pda.component.unloading.list
 
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivityUnloadingListBinding
 
 class UnloadingListActivity :
     BaseViewModelActivity<ActivityUnloadingListBinding>(ActivityUnloadingListBinding::inflate) {
+    private lateinit var viewModel: UnloadingListViewModel
+
     private var activeTab = "first"
 
     override fun initViews() {
@@ -15,7 +18,7 @@ class UnloadingListActivity :
 
     override fun initDatum() {
         super.initDatum()
-//        binding.appBarLayout.toolbarTitle = "主页1"
+        viewModel = ViewModelProvider(this).get(UnloadingListViewModel::class.java)
     }
 
     override fun initListeners() {

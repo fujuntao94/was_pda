@@ -10,8 +10,7 @@ object JSONUtil {
 
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
 
-        val gson = gsonBuilder.create()
-        return gson
+        return gsonBuilder.create()
     }
 
     fun toJson(data: Any): String {

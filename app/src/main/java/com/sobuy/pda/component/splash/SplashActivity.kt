@@ -7,6 +7,7 @@ import android.util.Log
 import com.permissionx.guolindev.PermissionX
 import com.sobuy.pda.component.main.MainActivity
 import com.sobuy.pda.activity.BaseViewModelActivity
+import com.sobuy.pda.component.login.LoginActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
 import com.sobuy.pda.utils.DefaultPreferenceUtil
 
@@ -64,7 +65,7 @@ class SplashActivity :
 //            startActivityAfterFinishThis(LoginActivity::class.java)
 //            return
 //        }
-        startActivityAfterFinishThis(MainActivity::class.java)
+        startActivityAfterFinishThis(LoginActivity::class.java)
     }
 
     override fun initDatum() {
