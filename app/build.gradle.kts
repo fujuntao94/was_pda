@@ -92,6 +92,9 @@ dependencies {
     implementation(libs.tablayout.v371)
     implementation(libs.viewpager2delegate.v371)
     implementation(libs.androidx.cardview)
+    implementation(libs.immersionbar)
+    implementation(libs.immersionbar.ktx)
+    implementation(libs.qmui)
 
 
     testImplementation(libs.junit)

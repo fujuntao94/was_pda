@@ -1,7 +1,8 @@
 package com.sobuy.pda.component.unloading.list
 
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
+import com.gyf.immersionbar.ImmersionBar
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivityUnloadingListBinding
@@ -11,15 +12,6 @@ class UnloadingListActivity :
     private lateinit var viewModel: UnloadingListViewModel
 
     private var activeTab = "first"
-
-    override fun initViews() {
-        super.initViews()
-    }
-
-    override fun initDatum() {
-        super.initDatum()
-        viewModel = ViewModelProvider(this).get(UnloadingListViewModel::class.java)
-    }
 
     override fun initListeners() {
         super.initListeners()
@@ -67,6 +59,12 @@ class UnloadingListActivity :
                 activeTab = "first"
             }
         }
+    }
+
+
+    override fun initViews() {
+        super.initViews()
+
     }
 
     companion object {
