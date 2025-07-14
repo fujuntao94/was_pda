@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
-import com.sobuy.pda.R
 
 open class BaseViewModelActivity<VB : ViewBinding>(
     private val inflate: (LayoutInflater) -> VB
@@ -19,16 +18,6 @@ open class BaseViewModelActivity<VB : ViewBinding>(
         super.onCreate(savedInstanceState)
         _binding = inflate(layoutInflater)
         setContentView(binding.root)
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            // 设置状态栏颜色
-//            window.statusBarColor = ContextCompat.getColor(this, R.color.primary)
-//
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                // 状态栏图标为深色（适用于浅色状态栏背景）
-//                window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
-//                        View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-//            }
-//        }
     }
 
     override fun onDestroy() {

@@ -6,4 +6,10 @@
     <string name="Inventory">Inventory</string>
     <string name="My">My</string>
     <string name="unloading_list_btn_synccon">Sync Con</string>
+    <string name="activity_login_account">Useraccount</string>
+    <string name="activity_login_password">Password</string>
+    <string name="activity_login_code">Code</string>
+    <string name="activity_login_submit">LOG IN</string>
+    <string name="activity_login_save_password">Save Password</string>
+    <string name="activity_login_lost_password">Lost Password?</string>
 </resources>

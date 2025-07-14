@@ -8,6 +8,8 @@ import com.sobuy.pda.databinding.ActivityUnloadingListBinding
 
 class UnloadingListActivity :
     BaseViewModelActivity<ActivityUnloadingListBinding>(ActivityUnloadingListBinding::inflate) {
+    private lateinit var viewModel: UnloadingListViewModel
+
     private var activeTab = "first"
 
     override fun initListeners() {

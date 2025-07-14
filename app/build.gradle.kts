@@ -55,7 +55,7 @@ android {
             applicationIdSuffix = ".dev"
             versionNameSuffix = "-dev"
             resValue("string", "app_name", "MyApp Dev")
-            buildConfigField("String", "API_URL", "\"http://47.100.204.166:18086/api/\"")
+            buildConfigField("String", "API_URL", "\"http://106.14.57.78:18086/api/\"")
         }
 
         create("prod") {

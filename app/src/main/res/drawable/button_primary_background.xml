@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 禁用状态的背景 -->
+
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/button_primary_disabled_background" />
+            <corners android:radius="22dp" />
+<!--            <stroke android:width="0dp" />-->
+        </shape>
+    </item>
+    <!-- 正常状态的背景 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+</selector>

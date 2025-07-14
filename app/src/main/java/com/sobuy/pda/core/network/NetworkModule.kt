@@ -1,5 +1,7 @@
-package com.sobuy.pda.api
+package com.sobuy.pda.core.network
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.sobuy.pda.AppContext
 import com.sobuy.pda.config.Config
 import com.sobuy.pda.utils.JSONUtil
@@ -24,20 +26,31 @@ object NetworkModule {
                 TimeUnit.SECONDS
             )
 
+//        okhttpClientBuilder.addInterceptor(TokenInterceptor())
+
         if (Config.DEBUG) {
             val loggingInterceptor = HttpLoggingInterceptor()
 
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
+            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
             okhttpClientBuilder.addInterceptor(loggingInterceptor)
         }
-
+        okhttpClientBuilder.addInterceptor { chain ->
+            val originalRequest = chain.request()
+            val newRequest = originalRequest.newBuilder()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .build()
+            chain.proceed(newRequest)
+        }
         return okhttpClientBuilder.build()
     }
 
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().client(okHttpClient).baseUrl(Config.API_URL).addConverterFactory(
-            GsonConverterFactory.create(JSONUtil.createGson())
+        val gson = GsonBuilder()
+            .create()
+        return Retrofit.Builder().baseUrl(Config.API_URL).client(okHttpClient).addConverterFactory(
+            GsonConverterFactory.create(gson)
         ).build()
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TransparentDialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowBackground">#E6000000</item> <!-- 90% 不透明度的黑色 -->
+        <item name="android:windowIsFloating">true</item> <!-- 可选：是否悬浮 -->
+        <item name="android:windowNoTitle">true</item>    <!-- 可选：无边框 -->
+    </style>
+
+</resources>

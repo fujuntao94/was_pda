@@ -5,68 +5,257 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="#FF33583B"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:paddingTop="24dp"
     tools:context=".component.login.LoginActivity">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="15.5dp"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:layout_width="@dimen/d24"
+            android:layout_height="@dimen/d24"
+            android:src="@mipmap/en_zh" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d25" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/logo"></ImageView>
+        android:src="@mipmap/logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="WCS Managment Syetem" />
+        android:text="WCS Managment Syetem"
+        android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/jumpToEnd"
-        android:layout_width="wrap_content"
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d28" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/d22">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/activity_login_account"
+                    android:padding="0dp"
+                    android:singleLine="true"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/d22">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingEnd="12dp"
+            tools:ignore="RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/activity_login_password"
+                    android:padding="0dp"
+                    android:singleLine="true"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="@dimen/d24"
+                android:layout_height="@dimen/d24"
+                android:src="@mipmap/password_display" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="2"
+            android:background="@color/white"
+            app:cardCornerRadius="@dimen/d22">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingEnd="12dp"
+                tools:ignore="RtlSymmetry">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/activity_login_code"
+                        android:padding="0dp"
+                        android:singleLine="true"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/verificationCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitButton"
+            style="@style/SuperButton.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:enabled="true"
+            android:outlineAmbientShadowColor="@color/white"
+            android:text="@string/activity_login_submit" />
+
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="你1好" />
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:orientation="horizontal">-->
+        <LinearLayout
+            android:id="@+id/savePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
-    <!--        <View-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1" />-->
+            <ImageView
+                android:id="@+id/circleView"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/custom_single_choice"
+                android:contentDescription="@string/activity_login_save_password" />
 
-    <!--        <com.google.android.material.button.MaterialButton-->
-    <!--            android:id="@+id/jumpToEnd"-->
-    <!--            style="@style/SuperButton.Primary"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:minWidth="@dimen/d130"-->
-    <!--            android:text="登陆或注册"-->
-    <!--            app:cornerRadius="@dimen/d10" />-->
+            <Space
+                android:layout_width="6dp"
+                android:layout_height="match_parent" />
 
-    <!--        <View-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_login_save_password"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
 
-    <!--        <com.google.android.material.button.MaterialButton-->
-    <!--            android:id="@+id/jumpToStart"-->
-    <!--            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="55dp"-->
-    <!--            android:backgroundTint="?attr/colorLightWhite"-->
-    <!--            android:minWidth="@dimen/d130"-->
-    <!--            android:text="立即体验"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            app:cornerRadius="@dimen/d10"-->
-    <!--            app:strokeColor="?attr/colorPrimary"-->
-    <!--            app:strokeWidth="1dp" />-->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
-    <!--        <View-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="0dp"-->
-    <!--            android:layout_weight="1" />-->
-
-    <!--    </LinearLayout>-->
+        <TextView
+            android:id="@+id/lostPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_login_lost_password"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
 </LinearLayout>

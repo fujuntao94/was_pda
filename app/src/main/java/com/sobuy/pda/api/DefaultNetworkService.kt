@@ -1,12 +1,12 @@
 package com.sobuy.pda.api
 
 import com.sobuy.pda.content.ContentWrapper
-import retrofit2.http.Query
+import com.sobuy.pda.core.network.NetworkModule
 import retrofit2.http.GET
 
 interface DefaultNetworkService {
 
-    @GET("/captchaImage")
+    @GET("captchaImage")
     suspend fun captchaImageApi(
     ): ContentWrapper
 
