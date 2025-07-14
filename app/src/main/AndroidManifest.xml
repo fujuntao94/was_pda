@@ -52,6 +52,10 @@
         <activity
             android:name=".component.unloading.list.UnloadingListActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".component.print.PrintActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -2,9 +2,12 @@ package com.sobuy.k.util
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.sobuy.k.R
 
@@ -14,6 +17,12 @@ class CustomTitleBarView @JvmOverloads constructor(
     attrs: AttributeSet? = null,  // 用于接收布局中传递的 app: 属性
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
+    // 定义回调接口
+    interface OnBackClickListener {
+        fun onBackClick() // 回调方法：通知宿主需要返回
+    }
+    // 存储回调实例
+    private var backClickListener: OnBackClickListener? = null
 
     init {
         // 1. 加载被引入的布局（将 layout_include.xml 加载到当前自定义 View 中）
@@ -41,5 +50,16 @@ class CustomTitleBarView @JvmOverloads constructor(
         textView.text = contentText
         textView.setTextColor(textColor)
         this.setBackgroundColor(bgColor)  // 设置根布局背景色
+
+        val backView = findViewById<ImageView>(R.id.back)
+        backView.setOnClickListener {
+            Log.d(TAG, ": ")
+            // 强转上下文为Activity（需确保context是Activity）
+            val activity = context as? AppCompatActivity
+            activity?.finish()
+        }
+    }
+    companion object {
+        const val TAG = "CustomTitleBarView"
     }
 }

@@ -91,7 +91,8 @@ dependencies {
     implementation(libs.viewpager2delegate.v371)
     implementation(libs.androidx.cardview)
     implementation(libs.qmui)
-// 基础依赖包，必须要依赖
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
+    // 基础依赖包，必须要依赖
     implementation(libs.immersionbar.v321)
     // kotlin扩展（可选）
     implementation(libs.immersionbar.ktx.v321)
