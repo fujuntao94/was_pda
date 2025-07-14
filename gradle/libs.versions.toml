@@ -2,6 +2,8 @@
 agp = "8.10.1"
 gson = "2.11.0"
 immersionbar = "3.2.2"
+immersionbarKtx = "3.2.1"
+immersionbarVersion = "3.2.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -20,6 +22,7 @@ qmui = "2.0.1"
 retrofit = "2.9.0"
 rxandroidble = "1.19.1"
 rxandroidbleVersion = "2.3.0"
+statusbarutil = "1.5.1"
 tablayout = "3.7.1"
 viewpager2delegate = "3.5.3"
 viewpager2delegateVersion = "3.7.1"
@@ -32,7 +35,10 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 immersionbar = { module = "com.geyifeng.immersionbar:immersionbar", version.ref = "immersionbar" }
+immersionbar-components = { module = "com.geyifeng.immersionbar:immersionbar-components", version.ref = "immersionbarKtx" }
 immersionbar-ktx = { module = "com.geyifeng.immersionbar:immersionbar-ktx", version.ref = "immersionbar" }
+immersionbar-ktx-v321 = { module = "com.geyifeng.immersionbar:immersionbar-ktx", version.ref = "immersionbarKtx" }
+immersionbar-v321 = { module = "com.geyifeng.immersionbar:immersionbar", version.ref = "immersionbarVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -48,6 +54,7 @@ qmui = { module = "com.qmuiteam:qmui", version.ref = "qmui" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 rxandroidble = { module = "com.polidea.rxandroidble3:rxandroidble", version.ref = "rxandroidble" }
 rxandroidble2-rxandroidble = { module = "com.polidea.rxandroidble2:rxandroidble", version.ref = "rxandroidbleVersion" }
+statusbarutil = { module = "com.jaeger.statusbarutil:statusbarutil", version.ref = "statusbarutil" }
 tablayout = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref = "viewpager2delegate" }
 tablayout-v371 = { module = "com.github.angcyo.DslTablayout:TabLayout", version.ref = "tablayout" }
 viewpager2delegate = { module = "com.github.angcyo.DslTablayout:ViewPager2Delegate", version.ref = "viewpager2delegate" }

@@ -2,7 +2,6 @@ package com.sobuy.pda.component.unloading.list
 
 import androidx.core.content.ContextCompat
 import com.gyf.immersionbar.ImmersionBar
-import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.sobuy.pda.R
 import com.sobuy.pda.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivityUnloadingListBinding
@@ -62,7 +61,7 @@ class UnloadingListActivity :
 
     override fun initViews() {
         super.initViews()
-
+        ImmersionBar.with(this).statusBarColor(R.color.primary).init();
     }
 
     companion object {

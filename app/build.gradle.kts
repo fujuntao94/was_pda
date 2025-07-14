@@ -46,8 +46,6 @@ android {
 
     dataBinding {
         enable = true
-        //noinspection DataBindingWithoutKapt
-        isEnabled = true
     }
 
     productFlavors {
@@ -92,10 +90,13 @@ dependencies {
     implementation(libs.tablayout.v371)
     implementation(libs.viewpager2delegate.v371)
     implementation(libs.androidx.cardview)
-    implementation(libs.immersionbar)
-    implementation(libs.immersionbar.ktx)
     implementation(libs.qmui)
-
+// 基础依赖包，必须要依赖
+    implementation(libs.immersionbar.v321)
+    // kotlin扩展（可选）
+    implementation(libs.immersionbar.ktx.v321)
+    // fragment快速实现（可选）
+    implementation(libs.immersionbar.components)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
