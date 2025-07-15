@@ -1,9 +1,9 @@
 package com.sobuy.pda.component.my
 
-import android.util.Log
+import android.graphics.Color
 import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.view.WindowManager
+import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.FragmentManager
 import com.sobuy.pda.R
 import com.sobuy.pda.databinding.FragmentDialogExitBinding
@@ -38,18 +38,19 @@ class ExitDialogFragment :
 
     override fun onResume() {
         super.onResume()
-        val params: ViewGroup.LayoutParams = dialog!!.window!!.attributes;
-        Log.d(TAG, "onResume: $params")
-        params.width = ((ScreenUtil.getScreenWidth(requireContext()) * 0.65).toInt())
-        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        dialog!!.window!!.attributes = params as WindowManager.LayoutParams;
+        dialog?.window?.apply {
+            setLayout(
+                ((ScreenUtil.getScreenWidth(requireContext()) * 0.65).toInt()),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+        }
     }
 
     companion object {
         fun show(fragmentManager: FragmentManager, onAgreementClickListener: OnClickListener) {
             val dialogFragment = ExitDialogFragment()
             dialogFragment.onAgreementClickListener = onAgreementClickListener;
-            dialogFragment.show(fragmentManager, "TermServiceDialogFragment")
+            dialogFragment.show(fragmentManager, "ExitDialogFragment")
         }
 
         const val TAG = "ExitDialogFragment"

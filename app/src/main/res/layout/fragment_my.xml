@@ -262,11 +262,28 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/bluetoothPrinter"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10292797"
-                    android:textColor="#303133" />
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Printer"
+                        android:textColor="#FF909399"
+                        android:textSize="16sp" />
+
+                    <Space
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:src="@mipmap/back"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

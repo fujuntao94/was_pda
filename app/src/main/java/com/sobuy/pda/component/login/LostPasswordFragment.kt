@@ -1,22 +1,17 @@
 package com.sobuy.pda.component.login
 
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Handler
 import android.os.Looper
 import android.view.Gravity
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.fragment.app.FragmentManager
-import com.sobuy.pda.databinding.FragmentLoginLostPasswordBinding
+import com.sobuy.pda.databinding.FragmentDialogLoginLostPasswordBinding
 import com.sobuy.pda.fragment.BaseViewModelDialogFragment
-import com.sobuy.pda.utils.ScreenUtil
 import androidx.core.graphics.drawable.toDrawable
-import androidx.core.graphics.toColorInt
-import com.sobuy.pda.R
 
-class LostPasswordFragment : BaseViewModelDialogFragment<FragmentLoginLostPasswordBinding>(
-    FragmentLoginLostPasswordBinding::inflate
+class LostPasswordFragment : BaseViewModelDialogFragment<FragmentDialogLoginLostPasswordBinding>(
+    FragmentDialogLoginLostPasswordBinding::inflate
 ) {
 
 
