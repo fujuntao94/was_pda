@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.FragmentManager
+import com.sobuy.pda.R
 import com.sobuy.pda.databinding.FragmentDialogMyBluetoothBinding
 import com.sobuy.pda.fragment.BaseViewModelDialogFragment
 import com.sobuy.pda.utils.ScreenUtil
@@ -15,7 +16,7 @@ class BluetoothDialogFragment :
         dialog?.window?.apply {
             setDimAmount(0f)
             setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
-
+            setBackgroundDrawableResource(R.drawable.dialog_rounded_bg)
             setLayout(
                 ((ScreenUtil.getScreenWidth(requireContext()) * 0.65).toInt()),
                 ViewGroup.LayoutParams.WRAP_CONTENT
