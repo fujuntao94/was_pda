@@ -10,6 +10,10 @@ class MyFragment : BaseViewModelFragment<FragmentMyBinding>(FragmentMyBinding::i
         binding.exit.setOnClickListener {
             showExitDialog()
         }
+
+        binding.bluetoothPrinter.setOnClickListener {
+            showBluetoothDialog()
+        }
     }
 
     private fun showExitDialog() {
@@ -18,6 +22,12 @@ class MyFragment : BaseViewModelFragment<FragmentMyBinding>(FragmentMyBinding::i
         ) {
             Log.d(TAG, "primary Click")
         }
+    }
+
+    private fun showBluetoothDialog() {
+        BluetoothDialogFragment.show(
+            childFragmentManager
+        )
     }
 
     companion object {
