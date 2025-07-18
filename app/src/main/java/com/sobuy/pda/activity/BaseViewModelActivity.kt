@@ -1,10 +1,7 @@
 package com.sobuy.pda.activity
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
 
 open class BaseViewModelActivity<VB : ViewBinding>(

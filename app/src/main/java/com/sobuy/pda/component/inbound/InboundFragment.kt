@@ -1,6 +1,7 @@
 package com.sobuy.pda.component.inbound
 
 import android.os.Bundle
+import com.sobuy.pda.component.clearanceorder.detail.ClearanceOrderDetailActivity
 import com.sobuy.pda.component.unloading.list.UnloadingListActivity
 import com.sobuy.pda.databinding.FragmentInboundBinding
 import com.sobuy.pda.fragment.BaseViewModelFragment
@@ -12,6 +13,10 @@ class InboundFragment :
         super.initListeners()
         binding.unloading.setOnClickListener {
             startActivity(UnloadingListActivity::class.java)
+        }
+
+        binding.clearanceOrder.setOnClickListener {
+            startActivity(ClearanceOrderDetailActivity::class.java)
         }
     }
 
