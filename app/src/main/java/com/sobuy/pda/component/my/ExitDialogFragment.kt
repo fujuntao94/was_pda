@@ -17,7 +17,7 @@ class ExitDialogFragment :
 
     override fun initViews() {
         super.initViews()
-        isCancelable = true
+//        isCancelable = true
 //        dialog!!.window!!.setBackgroundDrawableResource(R.drawable.dialog_rounded_bg)
     }
 
@@ -39,6 +39,7 @@ class ExitDialogFragment :
     override fun onResume() {
         super.onResume()
         dialog?.window?.apply {
+            isCancelable = false
             setBackgroundDrawableResource(R.drawable.dialog_rounded_bg)
             setLayout(
                 ((ScreenUtil.getScreenWidth(requireContext()) * 0.65).toInt()),
