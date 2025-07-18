@@ -15,6 +15,9 @@ class InboundFragment :
         }
     }
 
+    override fun initViews() {
+        super.initViews()
+    }
     companion object {
         fun newInstance(): InboundFragment {
             val args = Bundle()

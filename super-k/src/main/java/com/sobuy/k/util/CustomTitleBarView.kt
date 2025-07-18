@@ -53,7 +53,6 @@ class CustomTitleBarView @JvmOverloads constructor(
 
         val backView = findViewById<ImageView>(R.id.back)
         backView.setOnClickListener {
-            Log.d(TAG, ": ")
             // 强转上下文为Activity（需确保context是Activity）
             val activity = context as? AppCompatActivity
             activity?.finish()
