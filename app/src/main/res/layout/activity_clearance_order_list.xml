@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".component.clearanceorder.list.ClearanceOrderListActivity">
+    tools:context=".feature.clearanceorder.list.ui.activity.ClearanceOrderListActivity">
 
     <com.sobuy.pda.widgets.impl.TopNavigationView
         android:id="@+id/navigation"

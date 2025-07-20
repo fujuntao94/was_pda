@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".component.sync.SyncInventoryActivity">
+    tools:context=".feature.sync.ui.activity.SyncInventoryActivity">
 
     <com.sobuy.pda.widgets.impl.TopNavigationView
         android:id="@+id/navigation"

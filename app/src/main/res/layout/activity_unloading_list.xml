@@ -7,7 +7,7 @@
     android:background="#F0F0F0"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".component.unloading.list.UnloadingListActivity">
+    tools:context=".feature.unloading.list.ui.activity.UnloadingListActivity">
 
     <com.sobuy.k.util.CustomTitleBarView
         android:layout_width="match_parent"

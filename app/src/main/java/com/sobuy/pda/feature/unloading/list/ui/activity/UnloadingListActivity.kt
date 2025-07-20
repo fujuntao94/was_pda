@@ -1,0 +1,73 @@
+package com.sobuy.pda.feature.unloading.list.ui.activity
+
+import androidx.core.content.ContextCompat
+import com.gyf.immersionbar.ImmersionBar
+import com.sobuy.pda.R
+import com.sobuy.pda.feature.unloading.list.ui.viewmodel.UnloadingListViewModel
+import com.sobuy.pda.core.base.activity.BaseViewModelActivity
+import com.sobuy.pda.databinding.ActivityUnloadingListBinding
+
+class UnloadingListActivity :
+    BaseViewModelActivity<ActivityUnloadingListBinding>(ActivityUnloadingListBinding::inflate) {
+    private lateinit var viewModel: UnloadingListViewModel
+
+    private var activeTab = "first"
+
+    override fun initListeners() {
+        super.initListeners()
+        binding.onlyInLoadingTab.setOnClickListener {
+            if (activeTab == "first") {
+                binding.onlyInLoadingTab.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.primary
+                    )
+                )
+                binding.onlyInLoadingText.setTextColor(ContextCompat.getColor(this, R.color.white))
+                binding.allDesksTab.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.white
+                    )
+                )
+                binding.allDesksText.setTextColor(ContextCompat.getColor(this, R.color.primary))
+                activeTab = "second"
+            }
+        }
+
+        binding.allDesksTab.setOnClickListener {
+            if (activeTab == "second") {
+                binding.onlyInLoadingTab.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.white
+                    )
+                )
+                binding.onlyInLoadingText.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.primary
+                    )
+                )
+                binding.allDesksTab.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.primary
+                    )
+                )
+                binding.allDesksText.setTextColor(ContextCompat.getColor(this, R.color.white))
+                activeTab = "first"
+            }
+        }
+    }
+
+
+    override fun initViews() {
+        super.initViews()
+        ImmersionBar.with(this).statusBarColor(R.color.primary).init();
+    }
+
+    companion object {
+        const val TAG = "UnloadingListActivity"
+    }
+}

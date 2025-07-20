@@ -8,7 +8,7 @@
     android:background="#F0F0F0"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".component.main.MainActivity">
+    tools:context=".feature.main.ui.activity.MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"

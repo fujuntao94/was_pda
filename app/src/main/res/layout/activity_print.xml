@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".component.print.PrintActivity">
+    tools:context=".feature.print.ui.activity.PrintActivity">
 
 
     <com.sobuy.pda.widgets.impl.TopNavigationView
