@@ -12,6 +12,7 @@ import com.sobuy.pda.core.network.Resource
 import com.sobuy.pda.databinding.ActivityLoginBinding
 import com.sobuy.pda.feature.login.ui.viewmodel.LoginViewModel
 import com.sobuy.pda.core.utils.Base64ImageLoader
+import com.sobuy.pda.feature.main.ui.activity.MainActivity
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -79,7 +80,7 @@ class LoginActivity : BaseViewModelActivity<ActivityLoginBinding>(ActivityLoginB
     private fun observeLoginResult() {
         viewModel.loginResult.observe(this) { result ->
             when (result) {
-                is Resource.Success -> navigateToMainScreen(3000)
+                is Resource.Success -> navigateToMainScreen()
                 is Resource.Error -> handleLoginError(result)
                 is Resource.Loading -> handleLoadingState(result)
             }
@@ -89,20 +90,9 @@ class LoginActivity : BaseViewModelActivity<ActivityLoginBinding>(ActivityLoginB
     private fun navigateToLostPassword() {
         LostPasswordFragment.Companion.show(supportFragmentManager)
     }
-    fun Activity.showCustomToast(
-        message: String,
-        duration: Int = Toast.LENGTH_SHORT,
-        init: Toast.() -> Unit = {}
-    ) {
-        val toast = Toast.makeText(this, message, duration)
-        toast.init()  // 应用自定义设置
-        toast.show()
-    }
-    private fun navigateToMainScreen(duration: Int = Toast.LENGTH_SHORT) {
-        showCustomToast("juzhong") {
-            view = layoutInflater.inflate(R.layout.custom_toast, null)
-        }
-//        startActivityAfterFinishThis(MainActivity::class.java)
+
+    private fun navigateToMainScreen() {
+        startActivityAfterFinishThis(MainActivity::class.java)
     }
 
     private fun handleLoginError(result: Resource.Error<*>) {

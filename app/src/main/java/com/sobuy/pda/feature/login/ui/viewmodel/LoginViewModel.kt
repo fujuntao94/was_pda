@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sobuy.pda.R
 import com.sobuy.pda.core.network.Resource
+import com.sobuy.pda.core.utils.RSAUtils
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
@@ -17,35 +18,38 @@ import com.sobuy.pda.feature.login.data.repository.LoginRepository
 class LoginViewModel : ViewModel() {
     private val _base64Image = MutableSharedFlow<String>()
     val base64Image: Flow<String> = _base64Image
-    private val _uuid = MutableLiveData<String>("")
-
-    val userName = MutableLiveData<String>("")
-    val password = MutableLiveData<String>("")
-    val code = MutableLiveData<String>("")
-    private val _savePasswordEnabled = MutableLiveData(false)
-    val savePasswordEnabled: LiveData<Boolean> = _savePasswordEnabled
-    fun toggleSavePassword() {
-        _savePasswordEnabled.value = !_savePasswordEnabled.value!!
-    }
-
-    //
-    private val _passwordError = MutableLiveData<String?>()
-    val passwordError: LiveData<String?> = _passwordError
-    // 登录结果
-    private val _loginResult = MutableLiveData<Resource<LoginResponse>>()
-    val loginResult: LiveData<Resource<LoginResponse>> = _loginResult
-
+    private var uuid: String = ""
     fun captchaImage() {
         viewModelScope.launch {
             var response = LoginRepository.captchaImageApi()
             if (response.code == 200) {
                 val base64Image = "data:image/png;base64,${response.img}"
                 _base64Image.emit(base64Image)
-                _uuid.value = response.uuid
-//                _uuid.emit(response.uuid)
+                uuid = response.uuid
             }
         }
     }
+
+    private val _savePasswordEnabled = MutableLiveData(false)
+    val savePasswordEnabled: LiveData<Boolean> = _savePasswordEnabled
+    fun toggleSavePassword() {
+        _savePasswordEnabled.value = !_savePasswordEnabled.value!!
+    }
+
+    val userName = MutableLiveData<String>("")
+    val password = MutableLiveData<String>("")
+    val code = MutableLiveData<String>("")
+
+
+
+    //
+    private val _passwordError = MutableLiveData<String?>()
+    val passwordError: LiveData<String?> = _passwordError
+
+    // 登录结果
+    private val _loginResult = MutableLiveData<Resource<LoginResponse>>()
+    val loginResult: LiveData<Resource<LoginResponse>> = _loginResult
+
 
     // 验证并执行登录
     fun validateAndLogin() {
@@ -53,7 +57,7 @@ class LoginViewModel : ViewModel() {
 //        val passwordValid = validatePassword(password.value ?: "")
 //
 //        if (emailValid && passwordValid) {
-            performLogin()
+        performLogin()
 //        }
     }
 
@@ -61,17 +65,15 @@ class LoginViewModel : ViewModel() {
     private fun performLogin() {
         viewModelScope.launch {
             _loginResult.value = Resource.Loading()
-//
-//            val password = RSAUtils.encrypt(password.value!!, publicKey)
-//            val result = DefaultNetworkRepository.loginApi(
-//                username = userName.value ?: "",
-//                password = password,
-//                uuid = _uuid.value ?: "",
-//                language = "en_US",
-//                code = code.value ?: ""
-//            )
-//
-//            _loginResult.value = result
+            val password = RSAUtils.encrypt(password.value!!, publicKey)
+            val result = LoginRepository.loginApi(
+                username = userName.value ?: "",
+                password = password,
+                uuid = uuid,
+                language = "en_US",
+                code = code.value ?: ""
+            )
+            _loginResult.value = result
         }
     }
 
@@ -86,7 +88,7 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    private fun validateUserName(userName: String) : Boolean {
+    private fun validateUserName(userName: String): Boolean {
         return if (userName.isBlank()) {
             _passwordError.value = "用户名不能为空"
             false
@@ -99,14 +101,14 @@ class LoginViewModel : ViewModel() {
         }
     }
 
+    //
     private var publicKey: String = ""
     fun publicKey() {
         viewModelScope.launch {
-//            var response = DefaultNetworkRepository.publicKeyApi()
-//            if (response.data!!.code == 200) {
-//                publicKey = response.data.data.publicKey
-//                Log.d("TAG", "publicKey: ${RSAUtils.encrypt("123", publicKey)}")
-//            }
+            var response = LoginRepository.publicKeyApi()
+            if (response.data!!.code == 200) {
+                publicKey = response.data.data.publicKey
+            }
         }
     }
 }
