@@ -98,6 +98,7 @@ dependencies {
     implementation(libs.immersionbar.ktx.v321)
     // fragment快速实现（可选）
     implementation(libs.immersionbar.components)
+    implementation(libs.androidx.ui.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -10,6 +10,7 @@ import com.sobuy.pda.core.base.activity.BaseViewModelActivity
 import com.sobuy.pda.databinding.ActivitySplashBinding
 import com.sobuy.pda.feature.login.ui.activity.LoginActivity
 import com.sobuy.pda.core.utils.DefaultPreferenceUtil
+import com.sobuy.pda.feature.main.ui.activity.MainActivity
 
 class SplashActivity :
     BaseViewModelActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
@@ -65,7 +66,7 @@ class SplashActivity :
 //            startActivityAfterFinishThis(LoginActivity::class.java)
 //            return
 //        }
-        startActivityAfterFinishThis(LoginActivity::class.java)
+        startActivityAfterFinishThis(MainActivity::class.java)
     }
 
     override fun initDatum() {
