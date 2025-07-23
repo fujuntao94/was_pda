@@ -1,6 +1,6 @@
 package com.sobuy.pda.feature.unloading.list.ui.adapter
 
-import android.util.Log
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -39,14 +39,16 @@ class UnloadingListTopItemAdapter :
     inner class ItemViewHolder(private val binding: UnloadingListTopItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: UnloadingListTopItem) {
-            binding.textView.text = item.text
-
-            binding.root.setCardBackgroundColor(
-                ContextCompat.getColor(
-                    binding.root.context,
-                    if (item.isSelected) R.color.primary else R.color.white
+            binding.apply {
+                textView.text = item.text
+                root.setCardBackgroundColor(
+                    getItemBackgroundColor(root.context, item.isSelected)
                 )
-            )
+                textView.setTextColor(
+                    getItemTextColor(root.context, item.isSelected)
+                )
+                root.animate().alpha(1f).setDuration(200).start()
+            }
         }
     }
 
@@ -54,12 +56,34 @@ class UnloadingListTopItemAdapter :
         onItemClickListener = listener
     }
 
+    //  Extended function: Obtain background color based on selected state
+    fun getItemBackgroundColor(context: Context, isSelected: Boolean): Int {
+        return ContextCompat.getColor(
+            context,
+            if (isSelected) R.color.primary else R.color.gray
+        )
+    }
+
+    // Extended function: Get text color based on selected state
+    fun getItemTextColor(context: Context, isSelected: Boolean): Int {
+        return ContextCompat.getColor(
+            context,
+            if (isSelected) R.color.white else R.color.primary
+        )
+    }
+
     companion object DiffCallback : DiffUtil.ItemCallback<UnloadingListTopItem>() {
-        override fun areItemsTheSame(oldItem: UnloadingListTopItem, newItem: UnloadingListTopItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: UnloadingListTopItem,
+            newItem: UnloadingListTopItem
+        ): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: UnloadingListTopItem, newItem: UnloadingListTopItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: UnloadingListTopItem,
+            newItem: UnloadingListTopItem
+        ): Boolean {
             return oldItem.isSelected == newItem.isSelected
         }
     }
