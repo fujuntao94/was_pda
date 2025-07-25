@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.doOnLayout
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -41,14 +42,22 @@ class UnloadingListTopItemAdapter :
         fun bind(item: UnloadingListTopItem) {
             binding.apply {
                 textView.text = item.text
-                root.setCardBackgroundColor(
+                badgeView.text = item.id
+//                val height = badgeView.height
+//                badgeView.doOnLayout {
+//                    badgeView.translationX = height / 3f
+//                    badgeView.translationY = -height / 3f
+//                }
+
+                card.setCardBackgroundColor(
                     getItemBackgroundColor(root.context, item.isSelected)
                 )
                 textView.setTextColor(
                     getItemTextColor(root.context, item.isSelected)
                 )
-                root.animate().alpha(1f).setDuration(200).start()
+
             }
+
         }
     }
 

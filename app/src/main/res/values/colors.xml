@@ -8,4 +8,7 @@
     <color name="transparent">#01000000</color>
     <color name="button_primary_disabled_background">#FF397854</color>
     <color name="gray">#FFF0F0F0</color>
+    <color name="tableBack">#FFDBDBDB</color>
+
+    <color name="text">#FF303133</color>
 </resources>

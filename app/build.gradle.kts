@@ -99,6 +99,7 @@ dependencies {
     // fragment快速实现（可选）
     implementation(libs.immersionbar.components)
     implementation(libs.androidx.ui.android)
+    implementation(libs.androidx.legacy.support.v4)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

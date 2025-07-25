@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sobuy.pda.R
@@ -38,6 +39,7 @@ class UnloadingListActivity :
                     inactiveText = binding.allDesksText
                 )
                 activeTab = TAB_SECOND
+                binding.asyncButton.visibility = View.GONE
             }
         }
 
@@ -50,6 +52,7 @@ class UnloadingListActivity :
                     inactiveText = binding.onlyInLoadingText
                 )
                 activeTab = TAB_FIRST
+                binding.asyncButton.visibility = View.VISIBLE
             }
         }
     }
@@ -57,6 +60,7 @@ class UnloadingListActivity :
     override fun initViews() {
         super.initViews()
         topRecyclerView = binding.topRecyclerView
+        topRecyclerView.itemAnimator = null
         var d10 = resources.getDimensionPixelSize(R.dimen.d10)
         topRecyclerView.layoutManager = GridLayoutManager(this, SPAN_COUNT)
         topRecyclerView.addItemDecoration(
@@ -77,7 +81,6 @@ class UnloadingListActivity :
         }
 
         viewModel.itemList.observe(this) { items ->
-            adapter.submitList(items)
             // 控制空状态显示
             if (items.isEmpty()) {
                 binding.content.visibility = View.GONE
@@ -86,9 +89,12 @@ class UnloadingListActivity :
                 binding.content.visibility = View.VISIBLE
                 binding.emptyStateView.visibility = View.GONE
             }
+
+            adapter.submitList(items)
         }
 
         childRecyclerView = binding.childRecyclerView
+//        childRecyclerView.itemAnimator = null
         childRecyclerView.layoutManager = GridLayoutManager(this, SPAN_COUNT)
         childRecyclerView.addItemDecoration(
             GridSpacingItemDecoration(
@@ -109,13 +115,13 @@ class UnloadingListActivity :
 
         // Key: Observe the changes in the selected sub-data and update the sub-item list in real time
         viewModel.selectedChildren.observe(this) { selectedChildren ->
-            childrenItemAdapter.submitList(selectedChildren)
 
             if (selectedChildren.isEmpty()) {
                 binding.childRecyclerView.visibility = View.GONE
             } else {
                 binding.childRecyclerView.visibility = View.VISIBLE
             }
+            childrenItemAdapter.submitList(selectedChildren)
         }
     }
 
