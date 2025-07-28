@@ -21,7 +21,7 @@ class LoginViewModel : ViewModel() {
     private var uuid: String = ""
     fun captchaImage() {
         viewModelScope.launch {
-            var response = LoginRepository.captchaImageApi()
+            val response = LoginRepository.captchaImageApi()
             if (response.code == 200) {
                 val base64Image = "data:image/png;base64,${response.img}"
                 _base64Image.emit(base64Image)
@@ -105,7 +105,7 @@ class LoginViewModel : ViewModel() {
     private var publicKey: String = ""
     fun publicKey() {
         viewModelScope.launch {
-            var response = LoginRepository.publicKeyApi()
+            val response = LoginRepository.publicKeyApi()
             if (response.data!!.code == 200) {
                 publicKey = response.data.data.publicKey
             }

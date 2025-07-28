@@ -11,4 +11,6 @@
     <string name="activity_login_submit">登录</string>
     <string name="activity_login_save_password">记住密码</string>
     <string name="activity_login_lost_password">忘记密码?</string>
+    <string name="activity_unloading_detail_table_sku_id">SKU ID</string>
+    <string name="activity_unloading_detail_table_loaded_qty">Loaded Qty</string>
 </resources>
