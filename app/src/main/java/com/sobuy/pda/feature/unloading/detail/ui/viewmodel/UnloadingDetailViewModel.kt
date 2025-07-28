@@ -31,7 +31,6 @@ class UnloadingDetailViewModel : ViewModel() {
             delay(500)
             try {
                 // 构建表格数据
-                val headers = listOf("SKU ID", "Loaded Qty", "Qty to be unload", "CBM/Wei")
                 val rows = listOf(
                     listOf("FNS0081", "37", "27", "7.22/189"),
                     listOf("FNT0126", "20", "20", "16.31/40"),
@@ -44,7 +43,7 @@ class UnloadingDetailViewModel : ViewModel() {
                     listOf("FNT0126", "20", "20", "16.31/40"),
                     listOf("FNP3312", "24", "17", "22.50/33")
                 )
-                _tableData.postValue(listOf(headers) + rows)
+                _tableData.postValue(rows)
                 _uiState.postValue(TableUiState.Success)
             } catch (e: Exception) {
                 _uiState.postValue(TableUiState.Error("加载表格数据失败"))

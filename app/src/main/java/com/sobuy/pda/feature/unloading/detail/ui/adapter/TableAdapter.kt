@@ -13,7 +13,6 @@ import com.sobuy.pda.R
 class TableAdapter(
     private val data: List<String>,
     private val isHeader: Boolean = false,
-    private val columnWidths: List<Int>? = null
 ) : RecyclerView.Adapter<TableAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,13 +27,6 @@ class TableAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvCell.text = data[position]
-        // 设置列宽以确保与表头对齐
-        Log.d("TAG", "onBindViewHolder: $columnWidths")
-        columnWidths?.takeIf { it.size > position }?.let { widths ->
-            holder.itemView.layoutParams = (holder.itemView.layoutParams as ViewGroup.MarginLayoutParams).apply {
-                width = widths[position]
-            }
-        }
         // 表头样式
         if (isHeader) {
             holder.tvCell.apply {

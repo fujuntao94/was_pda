@@ -109,16 +109,72 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <!-- 表头 RecyclerView（固定顶部，只能左右滚动） -->
-                            <androidx.recyclerview.widget.RecyclerView
+                            <!--                            &lt;!&ndash; 表头 RecyclerView（固定顶部，只能左右滚动） &ndash;&gt;-->
+                            <!--                            <androidx.recyclerview.widget.RecyclerView-->
+                            <!--                                android:id="@+id/headerRecyclerView"-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:background="@color/white"-->
+                            <!--                                app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--                                app:layout_constraintStart_toStartOf="parent"-->
+                            <!--                                app:layout_constraintTop_toTopOf="parent" />-->
+                            <!-- 静态表头（固定数据，直接在布局中定义） -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
                                 android:id="@+id/headerRecyclerView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:background="#F5F5F5"
+                                app:layout_constraintTop_toTopOf="parent">
 
+                                <!-- 表头单元格 - SKU ID -->
+                                <TextView
+                                    android:id="@+id/headerSkuId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:gravity="center"
+                                    android:text="SKU ID"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.25" />
+
+                                <!-- 表头单元格 - Loaded Qty -->
+                                <TextView
+                                    android:id="@+id/headerLoadedQty"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:gravity="center"
+                                    android:text="Loaded Qty"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toEndOf="@id/headerSkuId"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.25" />
+
+                                <!-- 表头单元格 - Qty to be unload -->
+                                <TextView
+                                    android:id="@+id/headerQtyToUnload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:gravity="center"
+                                    android:text="Qty to be unload"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toEndOf="@id/headerLoadedQty"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.25" />
+
+                                <!-- 表头单元格 - CBM/Wei -->
+                                <TextView
+                                    android:id="@+id/headerCbmWei"
+                                    android:layout_width="0dp"
+                                    android:layout_height="48dp"
+                                    android:gravity="center"
+                                    android:text="CBM/Wei"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@id/headerQtyToUnload"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.25" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
                             <!-- 内容区RecyclerView（固定高度，可上下+左右滚动） -->
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/rowRecyclerView"
