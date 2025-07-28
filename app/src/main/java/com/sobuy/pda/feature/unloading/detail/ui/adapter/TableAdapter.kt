@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sobuy.pda.R
-import com.sobuy.pda.databinding.ItemTableRowBinding
 import com.sobuy.pda.feature.unloading.detail.data.model.TableData
 
 class TableAdapter(private val dataList: List<TableData>) :
