@@ -59,6 +59,14 @@
         <activity
             android:name=".feature.sync.ui.activity.SyncInventoryActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".feature.sendingorder.list.ui.activity.SendingOrderListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".feature.sendingorder.submit.ui.activity.SendingOrderSubmitActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

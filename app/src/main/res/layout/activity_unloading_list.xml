@@ -9,12 +9,11 @@
     android:orientation="vertical"
     tools:context=".feature.unloading.list.ui.activity.UnloadingListActivity">
 
-    <com.sobuy.k.util.CustomTitleBarView
+    <com.sobuy.pda.widgets.impl.TopNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:contentBgColor="@color/primary"
-        app:contentText="标题啊"
-        app:contentTextColor="@color/white" />
+        app:title="print" />
 
     <!-- 空状态视图 -->
     <LinearLayout

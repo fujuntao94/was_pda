@@ -19,12 +19,11 @@
         android:orientation="vertical"
         tools:context=".feature.unloading.detail.ui.activity.UnloadingDetailActivity">
 
-        <com.sobuy.k.util.CustomTitleBarView
+        <com.sobuy.pda.widgets.impl.TopNavigationView
+            android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentBgColor="@color/primary"
-            app:contentText="标题啊"
-            app:contentTextColor="@color/white" />
+            app:title="print" />
 
         <ScrollView
             android:layout_width="match_parent"
