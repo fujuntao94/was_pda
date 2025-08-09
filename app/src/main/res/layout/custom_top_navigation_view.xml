@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/left"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:contentDescription="Turn back"
-        android:src="@mipmap/turn_back" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="默认标题"
-        android:textColor="@color/white"
-        android:textSize="19sp" />
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/right"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:contentDescription="More"
-        android:src="@mipmap/more" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="默认标题"
+                android:textColor="@color/white"
+                android:textSize="19sp" />
 
-</LinearLayout>
+        </LinearLayout>
+
+        <!-- 内容容器（供外部填充内容） -->
+        <FrameLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</merge>
+
